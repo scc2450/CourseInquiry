@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
 import requests
-
+st.set_page_config(page_title='PKU Course Search', layout='wide')
+st.image('https://dean.pku.edu.cn/service/web/images/banner/banner_net.jpg', use_column_width=True)
 def soup_parser(course_data):
     for course in course_data:
         sksj_soup = BeautifulSoup(course['sksj'], 'html.parser')
@@ -29,14 +30,17 @@ payload = {
     'yuanxi': '0',
     'startrow': '0'
 }
+
+st.sidebar.title('欢迎使用课程信息查询镜像')
+st.sidebar.markdown('**当前搜索条件**')
 col1, col2 = st.columns(2)
-payload['coursename'] = col1.text_input('课程名称/课程号')
-payload['teachername'] = col2.text_input('教师名称')
+payload['coursename'] = col1.text_input('课程名称/课程号/关键字')
+payload['teachername'] = col2.text_input('教师名称/关键字')
 # 年份与学期
 year = col1.number_input('年份', min_value=2000, max_value=2024, value=2024)
-semester = col2.selectbox('学期', ['春季', '秋季'])
-year = year - 1 if semester == '春季' else year
-payload['yearandseme'] = f'{year-2000}-{year-1999}-{1 if semester == "秋季" else 2}'
+semester = col2.selectbox('学期', ['春季', '秋季', '暑校'])
+year = year if semester == '秋季' else year - 1
+payload['yearandseme'] = f'{year-2000}-{year-1999}-{1 if semester == "秋季" else 2 if semester == "春季" else 3}'
 # 课程类型映射
 # format_func = lambda x: x if x != '全部' else '0'
 coursetype_list = ['全部', '思政必修', '思政选择性必修', '劳动教育课', '大学英语', '体育', '通识核心课', '通选课', '全校公选课', '英语授课', '与中国有关的课程']
@@ -53,7 +57,8 @@ format_coursetype = lambda x: {
     '与中国有关的课程': '2-与中国有关课程',
     '全校公选课': '1-07',
 }[x]
-payload['coursetype'] = format_coursetype(st.selectbox('课程类型', coursetype_list))
+coursetype = st.selectbox('课程类型', coursetype_list)
+payload['coursetype'] = format_coursetype(coursetype)
 # st.write(payload['coursetype'])
 yuanxi_list = ['全部', '数院', '物院', '化院', '生科', '地空', '工院', '信科', '心院', '软微', '新传', '中文', '历史', '考古', '哲学', '国关', '经院', '国发', '光华', '法院', '信管', '社系', '政管', '大英', '外院', '马院', '体教', '艺术', '元培', '城环', '环科', '教务部', '医学部']
 format_yuanxi = lambda x: {
@@ -91,7 +96,15 @@ format_yuanxi = lambda x: {
     '教务部': '00612',
     '医学部': '10180',
 }[x]
-payload['yuanxi'] = format_yuanxi(st.selectbox('开课系所', yuanxi_list))
+yuanxi = st.selectbox('开课系所', yuanxi_list)
+payload['yuanxi'] = format_yuanxi(yuanxi)
+
+st.sidebar.write(f"课程名称/课程号: {payload['coursename']}")
+st.sidebar.write(f"教师名称: {payload['teachername']}")
+st.sidebar.write(f"年份与学期: {payload['yearandseme']}")
+st.sidebar.write(f"课程类型: {coursetype}")
+st.sidebar.write(f"开课系所: {yuanxi}")
+
 if 'show_form' not in st.session_state:
     st.session_state.show_form = False
     st.session_state.startrow = '0'
@@ -113,12 +126,12 @@ if st.session_state.show_form:
     # st.write(payload['startrow'])
     # st.json(response_data)
     if response_data['status'] == 'ok':
-        st.success(f"查询成功, 共查询到: {response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
+        st.success(f"查询成功, 共查询到{response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
     elif response_data['status'] == 'no':
         payload['startrow'] = '0'
         response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload, headers=headers)
         response_data = response.json()
-        st.success(f"查询成功, 共查询到: {response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
+        st.success(f"查询成功, 共查询到{response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
     # print(response.text)
 
     # for course in response['courselist']:
@@ -176,9 +189,9 @@ if st.session_state.show_form:
         'xf': '学分',
         'bz': None,
     }
-    st.dataframe(course_data, column_config =column_config)
+    st.dataframe(course_data, column_config =column_config, use_container_width=True)
     max_page_index = int(response_data['count']) // 100 + 1
-    page_index = st.number_input('页码', min_value=1, step=1, max_value=max_page_index, value=1)
+    page_index = st.number_input('页码(修改页码后请再次单击‘查询’)', min_value=1, step=1, max_value=max_page_index, value=1)
     st.session_state.startrow = str((page_index - 1) * 100)
 
 # 转存为csv文件
