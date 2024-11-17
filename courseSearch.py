@@ -16,6 +16,11 @@ def soup_parser(course_data):
         course['teacher'] = teacher
     return course_data
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+}
+
 payload = {
     'coursename': '',
     'teachername': '',
@@ -95,7 +100,7 @@ if st.button('查询'):
     payload['startrow'] = st.session_state.startrow
 if st.session_state.show_form:
     response_data={'status':'init','courselist':[],'count':0}
-    response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload)
+    response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload, headers=headers)
     
     if response.status_code == 200:  # 确保状态码为 200
         try:
@@ -110,7 +115,7 @@ if st.session_state.show_form:
         st.success(f"查询成功, 共查询到: {response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
     if response_data['status'] == 'no':
         payload['startrow'] = '0'
-        response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload)
+        response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload, headers=headers)
         st.success(f"查询成功, 共查询到: {response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
     # print(response.text)
 
