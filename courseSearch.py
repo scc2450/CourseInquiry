@@ -37,8 +37,10 @@ col1, col2 = st.columns(2)
 payload['coursename'] = col1.text_input('课程名称/课程号/关键字')
 payload['teachername'] = col2.text_input('教师名称/关键字')
 # 年份与学期
-year = col1.number_input('年份', min_value=2000, max_value=2024, value=2024)
-semester = col2.selectbox('学期', ['春季', '秋季', '暑校'])
+year_now = pd.Timestamp.now().year
+year = col1.number_input('年份', min_value=2000, max_value=year_now, value=year_now)
+semester_now = '春季' if pd.Timestamp.now().month < 7 else '秋季' if pd.Timestamp.now().month > 8 else '暑校'
+semester = col2.selectbox('学期', ['春季', '秋季', '暑校'], index=0 if semester_now == '春季' else 1 if semester_now == '秋季' else 2)
 year = year if semester == '秋季' else year - 1
 payload['yearandseme'] = f'{year-2000}-{year-1999}-{1 if semester == "秋季" else 2 if semester == "春季" else 3}'
 # 课程类型映射
