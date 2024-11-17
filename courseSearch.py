@@ -94,13 +94,24 @@ if st.button('查询'):
     st.session_state.show_form = True
     payload['startrow'] = st.session_state.startrow
 if st.session_state.show_form:
-    response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload).json()
-    if response['status'] == 'ok':
-        st.success(f"查询成功, 共查询到: {response['count']}条课程信息，当前展示第{response['courselist'][0]['xh']}-{response['courselist'][-1]['xh']}条")
-    if response['status'] == 'no':
+    response_data={'status':'init','courselist':[],'count':0}
+    response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload)
+    
+    if response.status_code == 200:  # 确保状态码为 200
+        try:
+            response_data = response.json()  # 尝试解析 JSON
+        except requests.JSONDecodeError:
+            st.write("响应不是有效的 JSON 格式：", response.text)
+            print(1111111111111111111)
+    else:
+        print(response.status_code)
+        st.error("网络连接失败")
+    if response_data['status'] == 'ok':
+        st.success(f"查询成功, 共查询到: {response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
+    if response_data['status'] == 'no':
         payload['startrow'] = '0'
         response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload)
-        st.success(f"查询成功, 共查询到: {response['count']}条课程信息，当前展示第{response['courselist'][0]['xh']}-{response['courselist'][-1]['xh']}条")
+        st.success(f"查询成功, 共查询到: {response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
     # print(response.text)
 
     # for course in response['courselist']:
@@ -126,7 +137,7 @@ if st.session_state.show_form:
 
     #         # 提交按钮
     #         submitted = st.form_submit_button("保存")
-    course_data = response['courselist']
+    course_data = response_data['courselist']
     soup_parser(course_data)
     
     # column_config = {
@@ -159,7 +170,7 @@ if st.session_state.show_form:
         'bz': None,
     }
     st.dataframe(course_data, column_config =column_config)
-    max_page_index = int(response['count']) // 100 + 1
+    max_page_index = int(response_data['count']) // 100 + 1
     page_index = st.number_input('页码', min_value=1, step=1, max_value=max_page_index, value=1)
     st.session_state.startrow = str((page_index - 1) * 100)
 
