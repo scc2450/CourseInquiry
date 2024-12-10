@@ -39,7 +39,7 @@ payload['coursename'] = col1.text_input('课程名称/课程号/关键字')
 payload['teachername'] = col2.text_input('教师名称/关键字')
 # 年份与学期
 year_now = pd.Timestamp.now().year
-year = col1.number_input('年份', min_value=2000, max_value=year_now+1, value=year_now)
+year = col1.number_input('年份', min_value=2010, max_value=year_now+1, value=year_now, help='可查询的时间范围为2012秋季至今')
 semester_now = '春季' if pd.Timestamp.now().month < 7 or year == year_now+1 else '秋季' if pd.Timestamp.now().month > 8 else '暑校'
 semester = col2.selectbox('学期', ['春季', '秋季', '暑校'], index=0 if semester_now == '春季' else 1 if semester_now == '秋季' else 2)
 year = year if semester == '秋季' else year - 1
@@ -82,7 +82,7 @@ format_yuanxi = lambda x: {
     '工院-COE': '00086',
     '信科-CSEE': '00048',
     '心院-PSY': '00016',
-    '软微_SS': '00017',
+    '软微-SS': '00017',
     '新传-SJC': '00018',
     '中文-CHN': '00020',
     '历史-HIST': '00021',
@@ -215,6 +215,7 @@ if st.session_state.show_form:
             "课程号",
             help="点击查看课程详情",
             display_text=r"https:.*#(.*?)$",
+            width='small'
         ),
         'kcmc': st.column_config.LinkColumn(
             "课程名称",
