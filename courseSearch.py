@@ -189,6 +189,10 @@ if st.session_state.show_form:
     #         submitted = st.form_submit_button("保存")
     course_data = response_data['courselist']
     soup_parser(course_data)
+    #拼接课程详情链接
+    for course in course_data:
+        course['kch'] = 'https://dean.pku.edu.cn/service/web/courseDetail.php?flag=1&zxjhbh=' + course['zxjhbh'] + '#' + course['kch']
+        course['kcmc'] = 'https://dean.pku.edu.cn/service/web/courseDetail.php?flag=1&zxjhbh=' + course['zxjhbh'] + '#' + course['kcmc']
     
     # column_config = {
     #     'xh': '序号',
@@ -207,8 +211,16 @@ if st.session_state.show_form:
 
     column_config = {
         'xh': None,
-        'kch': '课程号',
-        'kcmc': '课程名称',
+        'kch': st.column_config.LinkColumn(
+            "课程号",
+            help="点击查看课程详情",
+            display_text=r"https:.*#(.*?)$",
+        ),
+        'kcmc': st.column_config.LinkColumn(
+            "课程名称",
+            help="点击查看课程详情",
+            display_text=r"https:.*#(.*?)$",
+        ),
         'kctxm': None,
         'kkxsmc': '开课系所名称',
         'sksj': '上课时间',
@@ -217,7 +229,7 @@ if st.session_state.show_form:
         'jxbh': None,
         'qzz': None,
         'xf': '学分',
-        'bz': None,
+        'bz': '备注',
     }
     st.dataframe(course_data, column_config =column_config, use_container_width=True)
     max_page_index = int(response_data['count']) // 100 + 1
