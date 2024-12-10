@@ -65,7 +65,7 @@ payload['coursetype'] = format_coursetype(coursetype)
 # st.write(payload['coursetype'])
 yuanxi_list = [
     '全部-ALL', '数院-SMS', '物院-PHY', '化院-CHEM', '生科-BIO', '地空-SESS', '工院-COE', '信科-CSEE', 
-    '心院-PSY', '软微_SS', '新传-SJC', '中文-CHN', '历史-HIST', '考古-ARC', '哲学-PHIL', '国关-SIS', 
+    '心院-PSY', '软微-SS', '新传-SJC', '中文-CHN', '历史-HIST', '考古-ARC', '哲学-PHIL', '国关-SIS', 
     '经院-ECO', '国发-NSD', '光华-GSM', '汇丰-PHBS', '法院-LAW', '信管-IM', '社系-SOCI', '政管-SG', 
     '大英-ENG', '外院-SFL', '马院-MAR', '体教-PE', '艺术-SOA', '元培-YPC', '城环-UES', '环科-CESE', 
     '材料-MSE', '叉院-AAIS', '教务部-DEAN', '医学部-BJMU', '武装部-XGB', '教育学院-GSE', '歌剧研究院-OPE', 
