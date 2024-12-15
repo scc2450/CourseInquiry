@@ -58,25 +58,3 @@ if st.session_state.show_form:
     max_page_index = client.max_page_index
     page_index = st.number_input('页码(修改页码后请再次单击‘查询’)', min_value=1, step=1, max_value=max_page_index, value=1)
     st.session_state.startrow = str((page_index - 1) * 100)
-
-# 尝试下载全部
-all_course_data = []
-with st.sidebar.expander('下载全部课程信息'):
-    st.write('点击按钮下载全部课程信息至本地')
-    if st.button('抓取全部'):
-        st.spinner('正在下载全部课程信息...')
-        response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload, headers=headers)
-        response_data = response.json()
-        all_course_data = response_data['courselist']
-        loop_count = int(response_data['count']) // 100 + 1 if int(response_data['count']) % 100 != 0 else int(response_data['count']) // 100
-        for i in range(1, loop_count) if loop_count > 1 else range(0):
-            payload['startrow'] = str(i * 100)
-            response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload, headers=headers)
-            response_data = response.json()
-            course_data = response_data['courselist']
-            all_course_data.extend(course_data)
-        soup_parser(all_course_data)
-        # 转存为csv文件
-        df = pd.DataFrame(all_course_data)
-        df.to_csv('course_data.csv', index=False, encoding='utf-8-sig')
-        st.success('已下载全部课程信息至本地，文件名为course_data.csv')
