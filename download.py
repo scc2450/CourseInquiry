@@ -1,3 +1,10 @@
+########################
+# Download all course data
+# version 1.0
+# author: Erik
+# date: 12/15/2024
+########################
+
 import streamlit as st
 from client import CourseSearchClient
 from dataframe import soup_parser
