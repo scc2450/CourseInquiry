@@ -228,8 +228,11 @@ if st.session_state.show_form:
         'teacher': '教师',
         'zxjhbh': None,
         'jxbh': None,
-        'qzz': None,
-        'xf': '学分',
+        'xf': st.column_config.NumberColumn(
+            "学分",
+            format="{:.1f}",
+            width='small'
+        ),  
         'bz': '备注',
     }
     st.dataframe(course_data, column_config =column_config, use_container_width=True)
