@@ -228,9 +228,10 @@ if st.session_state.show_form:
         'teacher': '教师',
         'zxjhbh': None,
         'jxbh': None,
+        'qzz': '起止周',
         'xf': st.column_config.NumberColumn(
             "学分",
-            format="{:.1f}",
+            format="%.1f",
             width='small'
         ),  
         'bz': '备注',
