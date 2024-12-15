@@ -16,7 +16,7 @@ from download import download_all
 def run():
     st.set_page_config(page_title='PKU Course Search', layout='wide')
     st.header('White Whale Univ. Course Search')
-    st.image(Server.Head_img, use_column_width=True)
+    st.image(Server.Head_img, use_container_width=True)
 
     st.sidebar.title('欢迎使用课程信息查询镜像')
     st.sidebar.markdown('**当前搜索条件**')
