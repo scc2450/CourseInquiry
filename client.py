@@ -36,7 +36,8 @@ class CourseSearchClient(metaclass=Singleton):
                 if mode == 'inquiry':
                     st.success(f"查询成功, 共查询到{response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
                 elif mode == 'download':
-                    st.success(f"共{response_data['count']}条课程信息，正在抓取第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
+                    # st.success(f"共{response_data['count']}条课程信息，正在抓取第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
+                    pass
             else:
                 if depth <= 1:
                     self.payload['startrow'] = '0'
