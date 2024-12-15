@@ -13,20 +13,10 @@ import requests
 from const import Server
 from payload import Payload
 from dataframe import column_config
+from dataframe import soup_parser
 st.set_page_config(page_title='PKU Course Search', layout='wide')
 st.header('White Whale Univ. Course Search')
 st.image(Server.Head_img, use_column_width=True)
-def soup_parser(course_data):
-    for course in course_data:
-        sksj_soup = BeautifulSoup(course['sksj'], 'html.parser')
-        sksj_list = [p.text for p in sksj_soup.find_all('p')]
-        sksj = "，".join(sksj_list) if sksj_list else "时间单独分配"
-        course['sksj'] = sksj
-        teacher_soup = BeautifulSoup(course['teacher'], 'html.parser')
-        teacher_list = [p.text for p in teacher_soup.find_all('p')]
-        teacher = "/".join(teacher_list) if teacher_list else "未指定"
-        course['teacher'] = teacher
-    return course_data
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",

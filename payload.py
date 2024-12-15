@@ -46,7 +46,7 @@ class Payload:
         self.yuanxicode = format_yuanxi(self.yuanxi)
 
     def setstartrow(self, startrow):
-        self.startrow = startrow
+        self.startrow = str(startrow)
     
     def set(self):
         self.setcoursename()
