@@ -14,6 +14,7 @@ from const import Server
 from payload import Payload
 from dataframe import column_config
 from dataframe import soup_parser
+from client import CourseSearchClient
 st.set_page_config(page_title='PKU Course Search', layout='wide')
 st.header('White Whale Univ. Course Search')
 st.image(Server.Head_img, use_column_width=True)
@@ -48,41 +49,13 @@ if 'show_form' not in st.session_state:
     st.session_state.startrow = '0'
 if st.button('查询'):
     st.session_state.show_form = True
-    payload['startrow'] = st.session_state.startrow
+    my_payload.setstartrow(st.session_state.startrow)
 if st.session_state.show_form:
-    response_data={'status':'init','courselist':[],'count':0}
-    response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=my_payload.get(), headers=headers)
-    
-    if response.status_code == 200:  # 确保状态码为 200
-        try:
-            response_data = response.json()  # 尝试解析 JSON
-        except requests.JSONDecodeError:
-            st.write("响应不是有效的 JSON 格式：", response.text)
-    else:
-        print(response.status_code)
-        st.error("网络连接失败")
-    # st.write(payload['startrow'])
-    # st.json(response_data)
-    if response_data['status'] == 'ok' and response_data['count'] != 0:
-        st.success(f"查询成功, 共查询到{response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
-    elif response_data['status'] == 'no':
-        payload['startrow'] = '0'
-        response = requests.post('https://dean.pku.edu.cn/service/web/courseSearch_do.php', data=payload, headers=headers)
-        response_data = response.json()
-        if response_data['status'] == 'ok' and response_data['count'] != 0:
-            st.success(f"查询成功, 共查询到{response_data['count']}条课程信息，当前展示第{response_data['courselist'][0]['xh']}-{response_data['courselist'][-1]['xh']}条")
-        else:
-            st.error("未查询到任何课程信息")
-            
-    course_data = response_data['courselist']
-    soup_parser(course_data)
-    #拼接课程详情链接
-    for course in course_data:
-        course['kch'] = 'https://dean.pku.edu.cn/service/web/courseDetail.php?flag=1&zxjhbh=' + course['zxjhbh'] + '#' + course['kch']
-        course['kcmc'] = 'https://dean.pku.edu.cn/service/web/courseDetail.php?flag=1&zxjhbh=' + course['zxjhbh'] + '#' + course['kcmc']
-    
+    client = CourseSearchClient()
+    client.search(payload=my_payload.get())
+    course_data = soup_parser(client.course_data)
     st.dataframe(course_data, column_config =column_config, use_container_width=True)
-    max_page_index = int(response_data['count']) // 100 + 1
+    max_page_index = client.max_page_index
     page_index = st.number_input('页码(修改页码后请再次单击‘查询’)', min_value=1, step=1, max_value=max_page_index, value=1)
     st.session_state.startrow = str((page_index - 1) * 100)
 

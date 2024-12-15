@@ -37,10 +37,12 @@ class CourseSearchClient(metaclass=Singleton):
             else:
                 if depth <= 1:
                     self.payload['startrow'] = '0'
-                    self.search(depth=depth+1, payload=self.payload)
+                    return self.search(depth=depth+1, payload=self.payload)
                 else:
                     st.error("未查询到任何课程信息")
+                    return []
             self.response_data = response_data
             self.course_data = response_data['courselist']
-            self.all_course_conut = response_data['count']
+            self.all_course_conut = int(response_data['count'])
             self.max_page_index = self.all_course_conut // 100 + 1
+            return self.response_data

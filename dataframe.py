@@ -19,6 +19,8 @@ def soup_parser(course_data):
         teacher_list = [p.text for p in teacher_soup.find_all('p')]
         teacher = "/".join(teacher_list) if teacher_list else "未指定"
         course['teacher'] = teacher
+        course['kch'] = 'https://dean.pku.edu.cn/service/web/courseDetail.php?flag=1&zxjhbh=' + course['zxjhbh'] + '#' + course['kch']
+        course['kcmc'] = 'https://dean.pku.edu.cn/service/web/courseDetail.php?flag=1&zxjhbh=' + course['zxjhbh'] + '#' + course['kcmc']
     return course_data
 
 # column_config = {
