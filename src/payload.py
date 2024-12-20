@@ -101,7 +101,7 @@ class OfflinePayload:
         
     def setyearandseme(self):
         year_now = pd.Timestamp.now().year
-        year = self.col1.number_input('年份', min_value=1997, max_value=year_now+1, value=year_now, help='可查询的时间范围为1997秋季至今')
+        year = self.col1.number_input('年份', min_value=1998, max_value=year_now+1, value=year_now, help='可查询的时间范围为1997秋季至今')
         semester_now = '春季' if pd.Timestamp.now().month < 7 or year == year_now+1 else '秋季' if pd.Timestamp.now().month > 8 else '暑校'
         semester = self.col2.selectbox('学期', ['春季', '秋季', '暑校'], index=0 if semester_now == '春季' else 1 if semester_now == '秋季' else 2)
         year = year if semester == '秋季' else year - 1
