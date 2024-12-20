@@ -241,7 +241,7 @@ class Postgraduate_course_type:
     ]
 
 class Colleges:
-    num = 47
+    num = 48
     list = [
         {
             "id": "all",
