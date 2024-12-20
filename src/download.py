@@ -6,9 +6,8 @@
 ########################
 
 import streamlit as st
-from client import CourseSearchClient
-from dataframe import soup_parser
-from dataframe import column_config_download
+from .client import CourseSearchClient
+from .dataframe import soup_parser, column_config_download
 import pandas as pd
 from io import StringIO, BytesIO
 import time

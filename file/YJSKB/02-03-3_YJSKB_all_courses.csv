@@ -1,0 +1,13 @@
+classNo,courseId,courseName,courseType,credits,remark,scheduleTime,scheduleWeek,teacher,url,学年,学期,课表类型,开课系所
+00,YKC01711250AT0001243,软件体系结构,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711250AT0001243&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01711310AT0001245,软件质量保证与测试,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711310AT0001245&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01711500AT0006006,软件构件与中间件技术,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711500AT0006006&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01711520AT0006008,Internet高级程序设计,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711520AT0006008&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01712240AT0001264,无线数据技术与应用,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01712240AT0001264&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01712270AT0001267,光通信技术与应用,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01712270AT0001267&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01712560AT0001277,Internet安全协议与标准,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01712560AT0001277&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01712580AT0001279,网络攻防技术与工具,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01712580AT0001279&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01713500AT0006019,嵌入式软件开发技术与工具,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01713500AT0006019&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01713510AT0006020,DSP软件开发技术与工具,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01713510AT0006020&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01714210AT0006029,企业资源规划（ERP）,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714210AT0006029&kclx=YJ,02-03,3,YJSKB,00017
+00,YKC01714800AT0006047,电子服务案例分析,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714800AT0006047&kclx=YJ,02-03,3,YJSKB,00017

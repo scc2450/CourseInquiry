@@ -1,0 +1,20 @@
+classNo,courseId,courseName,courseType,credits,remark,scheduleTime,scheduleWeek,teacher,url,学年,学期,课表类型,开课系所
+02,YKC01711250AT0001243,软件体系结构,限选,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711250AT0001243&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01711300AT0001244,软件质量工程与最佳实践,限选,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711300AT0001244&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01711510AT0006007,软件实现技术,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711510AT0006007&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01711560AT0006012,软件设计模式,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711560AT0006012&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01711810AT0001251,高级软件测试技术,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01711810AT0001251&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01712600AT0001281,无线数据技术与应用,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01712600AT0001281&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01712800AT0001283,通信软件开发与管理,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01712800AT0001283&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01713500AT0006019,嵌入式软件开发技术与工具,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01713500AT0006019&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01713810AT0006024,数字家庭网关技术,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01713810AT0006024&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01713820AT0006025,传感器网络技术,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01713820AT0006025&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01714410AT0001293,商务智能（II）-数据挖掘及CRM,限选,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714410AT0001293&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01714820AT0006049,电子服务专题Ⅰ,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714820AT0006049&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01714830AT0006050,电子服务专题Ⅱ,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714830AT0006050&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01714900AT0006052,领域业务之实践专题,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714900AT0006052&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01714940AT0001299,电子通讯,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01714940AT0001299&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01716240AT0006082,研究与开发管理,限选,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01716240AT0006082&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01716520AT0001311,高级项目管理,选修,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01716520AT0001311&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01716530AT0001312,企业创新管理,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01716530AT0001312&kclx=YJ,04-05,3,YJSKB,00017
+02,YKC01716800AT0006086,IT企业管理典型案例分析,选修,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC01716800AT0006086&kclx=YJ,04-05,3,YJSKB,00017

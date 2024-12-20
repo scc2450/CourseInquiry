@@ -1,0 +1,3 @@
+classNo,courseId,courseName,courseType,credits,remark,scheduleTime,scheduleWeek,teacher,url,学年,学期,课表类型,开课系所
+1,BKC04130001AT0008185,体育一,全校必修,1,,周一1-2,1-16,萧文革(副教授),http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=BKC04130001AT0008185&kclx=BK,12-13,1,BKSKB,00041
+1,BKC00833110AT0001697,离散数学 (I),双学位,4,,周二1-2，周一1-2,1-16,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=BKC00833110AT0001697&kclx=BK,12-13,1,BKSKB,00048

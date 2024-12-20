@@ -5,9 +5,8 @@
 # date: 12/151/2024
 ########################
 
-from const import headers, init_payload, Server
-from utils import Singleton
-from payload import Payload
+from .const import headers, init_payload, Server
+from .utils import Singleton
 
 import requests, streamlit as st
 

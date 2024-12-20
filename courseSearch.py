@@ -5,7 +5,7 @@
 # date: 12/15/2024
 ########################
 
-from page import run
+from src.main import run
 
 if __name__ == '__main__':
     run()

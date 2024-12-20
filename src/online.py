@@ -1,5 +1,5 @@
 ########################
-# Page Configuration
+# Undergraduate Configuration
 # version 1.0
 # author: Erik
 # date: 12/15/2024
@@ -7,27 +7,26 @@
 
 
 import streamlit as st
-from const import Server
-from payload import Payload
-from client import CourseSearchClient
-from dataframe import column_config, soup_parser
-from download import download_all
+from .const import Server
+from .payload import OnlinePayload
+from .client import CourseSearchClient
+from .dataframe import column_config, soup_parser
+from .download import download_all
 
-def run():
-    st.set_page_config(page_title='PKU Course Search', layout='wide')
-    st.header('White Whale Univ. Course Search')
+def run(index_sidebar):
     st.image(Server.Head_img, use_container_width=True)
-
-    st.sidebar.title('欢迎使用课程信息查询镜像')
-    st.sidebar.markdown('**当前搜索条件**')
-
-    my_payload = Payload()
+    my_payload = OnlinePayload()
     my_payload.set()
-    st.sidebar.write(f"课程名称/课程号: {my_payload.coursename}")
-    st.sidebar.write(f"教师名称: {my_payload.teachername}")
-    st.sidebar.write(f"年份与学期: {my_payload.yearandseme}")
-    st.sidebar.write(f"课程类型: {my_payload.coursetype}")
-    st.sidebar.write(f"开课系所: {my_payload.yuanxi}")
+    with index_sidebar.container():
+        st.title('欢迎使用课程信息查询镜像')
+        st.markdown('数据源：[教务网](https://dean.pku.edu.cn/service/web/courseSearch.php)')
+        st.divider()
+        st.markdown(f'**当前搜索条件**')
+        st.write(f"课程名称/课程号: {my_payload.coursename}") if my_payload.coursename else None
+        st.write(f"教师名称: {my_payload.teachername}") if my_payload.teachername else None
+        st.write(f"年份与学期: {my_payload.yearandseme}")
+        st.write(f"课程类型: {my_payload.coursetype}")
+        st.write(f"开课系所: {my_payload.yuanxi}")
 
     if 'show_form' not in st.session_state:
         st.session_state.show_form = False

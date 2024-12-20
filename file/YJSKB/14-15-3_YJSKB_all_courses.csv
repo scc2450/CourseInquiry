@@ -1,0 +1,19 @@
+classNo,courseId,courseName,courseType,credits,remark,scheduleTime,scheduleWeek,teacher,url,学年,学期,课表类型,开课系所
+00,yjkc20140500014537,分子进化暑期课,选修,2,,- ,-,陆剑,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20140500014537&kclx=YJ,14-15,3,YJSKB,00011
+00,yjkc20150500017833,生物统计学的理论和应用,选修,2,,- ,-,李沉简,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20150500017833&kclx=YJ,14-15,3,YJSKB,00011
+00,yjkc20150400017065,癌发生的分子和细胞学机制,选修,2,,- ,-,张文霞,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20150400017065&kclx=YJ,14-15,3,YJSKB,00011
+00,yjkc20150400017071,高级植物分子生物学实验技术,选修,3,,- ,-,王东辉,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20150400017071&kclx=YJ,14-15,3,YJSKB,00011
+00,yjkc20150400017054,复杂场景下听知觉专题,选修,2,,- ,-,李量,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20150400017054&kclx=YJ,14-15,3,YJSKB,00016
+00,yjkc20120600009464,硅基光电子技术及应用,选修,3,,- ,-,周治平,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20120600009464&kclx=YJ,14-15,3,YJSKB,00048
+00,yjkc20150400017224,普适计算与大数据,选修,2,,- ,-,张大庆,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20150400017224&kclx=YJ,14-15,3,YJSKB,00048
+00,yjkc20140300013943,工程科学研究方法,选修,2,,- ,-,王源,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20140300013943&kclx=YJ,14-15,3,YJSKB,00048
+00,yjkc20150500018053,高等教育的多视角研究,限选,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=yjkc20150500018053&kclx=YJ,14-15,3,YJSKB,00067
+00,YKC06710451AT0010283,教育政策研究,限选,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06710451AT0010283&kclx=YJ,14-15,3,YJSKB,00067
+00,YKC06710492AT0004277,组织理论与高教管理,限选,2,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06710492AT0004277&kclx=YJ,14-15,3,YJSKB,00067
+00,YKC06710502AT0009683,高等教育经济与财政,限选,3,,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06710502AT0009683&kclx=YJ,14-15,3,YJSKB,00067
+04,YKC06802031AT0000001,人口科学专题研究,选修,3,,- ,-,乔晓春,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06802031AT0000001&kclx=YJ,14-15,3,YJSKB,00068
+04,YKC06808A14C10023R60,社会科学应用统计学,选修,3,,- ,-,乔晓春,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06808A14C10023R60&kclx=YJ,14-15,3,YJSKB,00068
+04,YKC06808A14C10083R70,生存分析,选修,3,,- ,-,乔晓春,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06808A14C10083R70&kclx=YJ,14-15,3,YJSKB,00068
+04,YKC06811011AT0009415,人口分析技术I,选修,3,,- ,-,李涌平，张蕾,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06811011AT0009415&kclx=YJ,14-15,3,YJSKB,00068
+04,YKC06811210AT0004346,社会项目评估方法,选修,2,,- ,-,乔晓春,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC06811210AT0004346&kclx=YJ,14-15,3,YJSKB,00068
+00,YKC08610412C18213R72,黏弹性固体力学,选修,2,励争邀请Mehrdad Negahban讲授,- ,-,,http://sims.pku.edu.cn/bkxjTeaching/edu/pku/stu/teaching/bkxj/jpf/courseBK/getCourseDetail.do?course_seq_no=YKC08610412C18213R72&kclx=YJ,14-15,3,YJSKB,00086
