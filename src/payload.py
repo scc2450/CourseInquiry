@@ -69,6 +69,7 @@ class OnlinePayload:
 class OfflinePayload:
     def __init__(self):
         self.courseName = 'unset'
+        self.profName = 'unset'
         self.year = CourseScheduleList.init_payload['year']
         self.term = CourseScheduleList.init_payload['term']
         self.courseScheduleType = CourseScheduleList.init_payload['courseScheduleType']
@@ -83,8 +84,11 @@ class OfflinePayload:
     def setcoursename(self):
         self.courseName = self.col1.text_input('课程名称/关键字',help='暂不支持课程号搜索')
 
+    def setprofname(self):
+        self.profName = self.col2.text_input('教师名称')
+
     def setcourseScheduleType(self):
-        self.courseScheduleTypeName = self.col2.selectbox('课表类型', ['本科生课表', '研究生课表'], index=0)
+        self.courseScheduleTypeName = st.selectbox('课表类型', ['本科生课表', '研究生课表'], index=0)
         self.courseScheduleType = 'BKSKB' if self.courseScheduleTypeName == '本科生课表' else 'YJSKB'
 
     def format_year(self, year):
@@ -110,19 +114,20 @@ class OfflinePayload:
 
     def setcoursetype(self):
         courses_type_list = get_list(Undergraduate_course_type.list) if self.courseScheduleType == 'BKSKB' else get_list(Postgraduate_course_type.list)
-        self.courseTypeName = st.selectbox('课程类型', courses_type_list)
+        self.courseTypeName = self.col2.selectbox('课程类型', courses_type_list)
         courese_type_dict =  get_dict(Undergraduate_course_type.list) if self.courseScheduleType == 'BKSKB' else get_dict(Postgraduate_course_type.list)
         format_coursetype = lambda x: courese_type_dict[x]
         self.courseType = format_coursetype(self.courseTypeName)
 
     def setdeptId(self):
-        self.deptName = st.selectbox('开课系所', get_list(Colleges.list),index=1)
+        self.deptName = self.col1.selectbox('开课系所', get_list(Colleges.list),index=1)
         format_deptId = lambda x: get_dict(Colleges.list)[x]
         self.deptId = format_deptId(self.deptName)
 
     def set(self):
-        self.setcoursename()
         self.setcourseScheduleType()
+        self.setcoursename()
+        self.setprofname()
         self.setyearandseme()
         self.setcoursetype()
         self.setdeptId()

@@ -33,6 +33,8 @@ def run(index_sidebar):
             df = df[df['开课系所'] == int(my_payload.deptId)]
         if my_payload.courseName:
             df = df[df['courseName'].str.contains(my_payload.courseName, case=False, na=False)]
+        if my_payload.profName:
+            df = df[df['teacher'].str.contains(my_payload.profName, case=False, na=False)]
         if my_payload.courseType != '':
             df = df[df['courseType'] == my_payload.courseTypeName]
         st.success(f"共查询到{df.shape[0]}条{'' if my_payload.deptId=='all' else my_payload.deptName}于{my_payload.year}-{my_payload.term}开设的{my_payload.courseScheduleTypeName[:3]}课程({my_payload.courseTypeName})")
